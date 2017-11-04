@@ -9,8 +9,9 @@ const EventPriority = Java.type("org.bukkit.event.EventPriority");
 const EventCallback = Java.type("io.magikcraft.EventCallback");
 
 const eventTypes = {
-	PlayerMoveEvent: 'org.bukkit.event.entity.PlayerDeathEvent',
+	PlayerMoveEvent: 'org.bukkit.event.player.PlayerMoveEvent',
 	ProjectileHitEvent: 'org.bukkit.event.entity.ProjectileHitEvent',
+	PlayerRespawnEvent: 'org.bukkit.event.entity.PlayerRespawnEvent',
 };
 
 const Events = {
