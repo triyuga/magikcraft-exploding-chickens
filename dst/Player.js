@@ -7,6 +7,7 @@ var player = magik.getSender();
 var Player = {
     init: function () {
         this.enableEventListeners();
+        this.setupInventory();
     },
     enableEventListeners: function () {
         Events_1.default.registerAll();

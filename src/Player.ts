@@ -8,6 +8,7 @@ const player = magik.getSender();
 const Player = {
 	init() {
 		this.enableEventListeners();
+		this.setupInventory();
 	},
 
 	enableEventListeners() {
