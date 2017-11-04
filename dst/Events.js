@@ -9,7 +9,7 @@ var EventCallback = Java.type("io.magikcraft.EventCallback");
 var eventTypes = {
     PlayerMoveEvent: 'org.bukkit.event.player.PlayerMoveEvent',
     ProjectileHitEvent: 'org.bukkit.event.entity.ProjectileHitEvent',
-    PlayerRespawnEvent: 'org.bukkit.event.entity.PlayerRespawnEvent',
+    PlayerRespawnEvent: 'org.bukkit.event.player.PlayerRespawnEvent',
 };
 var Events = {
     on: function (eventName, callback) { return Emitter.on(eventName, callback); },
