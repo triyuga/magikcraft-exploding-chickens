@@ -40,6 +40,7 @@ const Player = {
 		});
 		Events.on('PlayerMoveEvent', (event) => {
 			// PlayerMoveEvent
+			log('PlayerMoveEvent!');
 			const entities = player.getWorld()['getEntities']();
 			entities.forEach(entity => {
 				const type = entity.getType();

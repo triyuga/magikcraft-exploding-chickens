@@ -37,6 +37,7 @@ var Player = {
         });
         Events_1.default.on('PlayerMoveEvent', function (event) {
             // PlayerMoveEvent
+            log('PlayerMoveEvent!');
             var entities = player.getWorld()['getEntities']();
             entities.forEach(function (entity) {
                 var type = entity.getType();
