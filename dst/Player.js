@@ -32,18 +32,34 @@ var Player = {
             var server = magik.getPlugin().getServer();
             var cmd = "execute " + player.getName() + " ~ ~ ~ summon CHICKEN " + location;
             server.dispatchCommand(server.getConsoleSender(), cmd);
+            magik.setTimeout(function () {
+                log('explode!');
+                var entities = player.getWorld()['getEntities']();
+                entities.forEach(function (entity) {
+                    var type = entity.getType();
+                    if (type == 'CHICKEN') {
+                        if (entity.getLocation().distance(player.getLocation()) <= 10) {
+                            entity.getWorld().createExplosion(entity.getLocation(), '3.0F');
+                            entity.setHealth(0);
+                        }
+                    }
+                });
+            }, 3000);
         });
         Events_1.default.on('PlayerRespawnEvent', function (event) {
             // PlayerRespawnEvent
         });
         Events_1.default.on('PlayerMoveEvent', function (event) {
             // PlayerMoveEvent
-            log('PlayerMoveEvent!');
-            var entities = player.getWorld()['getEntities']();
-            entities.forEach(function (entity) {
-                var type = entity.getType();
-                log('type:' + type);
-            });
+            // log('PlayerMoveEvent!');
+            // const entities = player.getWorld()['getEntities']();
+            // entities.forEach(entity => {
+            // 	const type = entity.getType();
+            // 	if (type == 'CHICKEN') {
+            // 		if(entity.getLocation().distance(player.getLocation()) <= 10) {
+            // 		}
+            // 	}
+            // })
         });
     },
     setupInventory: function () {
