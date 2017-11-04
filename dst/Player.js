@@ -38,8 +38,8 @@ var Player = {
                 entities.forEach(function (entity) {
                     var type = entity.getType();
                     if (type == 'CHICKEN') {
-                        if (entity.getLocation().distance(player.getLocation()) <= 10) {
-                            entity.getWorld().createExplosion(entity.getLocation(), '3.0F');
+                        if (entity.getLocation().distance(player.getLocation()) <= 30) {
+                            entity.getWorld().createExplosion(entity.getLocation(), '5.0F');
                             entity.setHealth(0);
                         }
                     }
